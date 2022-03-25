@@ -1,5 +1,5 @@
 export default class Character {
-  constructor(name, type, health, level, attack_private, defence) {
+  constructor(name, type, health, level, attackPrivate, defence) {
     if ((name.length < 2) || (name.length > 10)) {
       throw new Error('Error: name length should be in b/w 2 and 10 bytes.');
     }
@@ -11,7 +11,7 @@ export default class Character {
     this.type = type;
     this.health = health;
     this.level = level;
-    this.attack_private = attack_private;
+    this.attackPrivate = attackPrivate;
     this.defence = defence;
   }
 
@@ -20,8 +20,8 @@ export default class Character {
       throw new Error('The hero is dead.');
     }
     this.level += 1;
-    this.attack_private = 1.2 * this.attack_private;
-    this.defence = 1.2 * this.defence;
+    this.attackPrivate *= 1.2;
+    this.defence *= 1.2;
     this.health += 100;
   }
 
